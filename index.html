@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYA</title>
+    <meta name="description" content="Nya — German hyperpop artist. Music, socials, everything.">
+    <meta property="og:title" content="NYA">
+    <meta property="og:description" content="German hyperpop for people who feel too much and sleep too little.">
+    <meta property="og:type" content="music.musician">
+    <link rel="canonical" href="https://nya03.github.io/links/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Nya",
+        "url": "https://nya03.github.io/links/",
+        "genre": ["Hyperpop", "Electronic", "Rap", "Pop"],
+        "description": "German hyperpop musician, rapper, singer, songwriter from Herten, Germany.",
+        "sameAs": [
+            "https://www.wikidata.org/wiki/Q135998061",
+            "https://open.spotify.com/artist/611pv3ZS2T5iLg7k9tDrgS",
+            "https://music.apple.com/artist/1369849403",
+            "https://soundcloud.com/nya_solo",
+            "https://www.youtube.com/@its_nya_music",
+            "https://www.instagram.com/its_nya_music/",
+            "https://x.com/its_nya_music",
+            "https://www.tiktok.com/@nyamusicofficial",
+            "https://genius.com/artists/Nya-rapper",
+            "https://musicbrainz.org/artist/d4983c1c-e81d-4548-85d8-056d5e23855a"
+        ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;700;900&display=swap');
+
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --border: #2a2a3a;
+            --text: #e0e0e8;
+            --text-dim: #8888a0;
+            --accent: #ff2d7b;
+            --accent-glow: rgba(255, 45, 123, 0.12);
+            --cyan: #00e5ff;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 480px;
+            padding: 3.5rem 1.25rem 2.5rem;
+        }
+
+        /* ---- header ---- */
+        .header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .header::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--cyan));
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            color: #fff;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-top: 0.4rem;
+            font-weight: 400;
+        }
+
+        .tag {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.25rem 0.8rem;
+            margin-top: 0.8rem;
+            background: var(--accent-glow);
+        }
+
+        /* ---- section labels ---- */
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 0.75rem;
+        }
+
+        .section + .section {
+            margin-top: 2rem;
+        }
+
+        /* ---- link items ---- */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 1rem;
+            background: var(--surface);
+            color: var(--text);
+            text-decoration: none;
+            transition: background 0.12s;
+        }
+
+        .link:hover {
+            background: #1a1a25;
+        }
+
+        .link-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .link-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .link-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .link-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .link-handle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-top: 1px;
+        }
+
+        .link-arrow {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.12s;
+            flex-shrink: 0;
+        }
+
+        .link:hover .link-arrow {
+            opacity: 1;
+        }
+
+        /* icon colors */
+        .c-spotify svg { fill: #1ed760; }
+        .c-apple svg { fill: #fc3c4c; }
+        .c-soundcloud svg { fill: #ff8800; }
+        .c-youtube svg { fill: #ff1744; }
+        .c-instagram svg { fill: #e1306c; }
+        .c-tiktok svg { fill: #00f2ea; }
+        .c-x svg { fill: #a0a0b0; }
+        .c-genius svg { fill: #ffff64; }
+
+        /* ---- footer ---- */
+        .footer {
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+            opacity: 0.5;
+        }
+
+        @media (max-width: 480px) {
+            .page { padding: 2.5rem 1rem 2rem; }
+            h1 { font-size: 2.4rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <h1>NYA</h1>
+        <div class="tagline">music for the hours when you should be asleep but aren't</div>
+        <div class="tag">Herten, DE</div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Listen</div>
+        <div class="links">
+            <a href="https://open.spotify.com/artist/611pv3ZS2T5iLg7k9tDrgS" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-spotify"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">Spotify</div>
+                    <div class="link-handle">stream everything</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+            <a href="https://music.apple.com/artist/1369849403" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-apple"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">Apple Music</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+            <a href="https://soundcloud.com/nya_solo" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-soundcloud"><svg viewBox="0 0 24 24"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c-.009-.06-.05-.1-.1-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.172 1.282c.013.06.045.094.104.094.057 0 .09-.035.104-.094l.197-1.282-.196-1.332c-.014-.057-.047-.094-.105-.094m1.79-1.065c-.067 0-.12.048-.12.115l-.194 2.376.194 2.293c0 .066.053.118.12.118.065 0 .118-.052.118-.118l.222-2.293-.222-2.376c0-.067-.053-.115-.118-.115m.899-.423c-.075 0-.135.065-.135.141l-.177 2.799.177 2.682c0 .078.06.14.135.14.074 0 .135-.062.135-.14l.2-2.682-.2-2.799c0-.076-.061-.14-.135-.14m.93-.156c-.085 0-.148.074-.148.158l-.163 2.955.163 2.831c0 .084.063.156.148.156.084 0 .148-.072.148-.156l.184-2.831-.184-2.955c0-.084-.064-.158-.148-.158m.94-.112c-.09 0-.163.08-.163.175l-.153 3.067.152 2.886c.001.093.074.17.164.17.091 0 .163-.077.163-.17l.172-2.886-.172-3.067c0-.095-.072-.175-.163-.175m.938-.049c-.098 0-.176.09-.176.196l-.14 3.116.14 2.918c.001.104.078.192.177.192.098 0 .176-.088.176-.192l.157-2.918-.157-3.116c0-.106-.078-.196-.176-.196m.947.01c-.105 0-.19.1-.19.214l-.13 2.892.13 2.928c.001.112.086.208.19.208.107 0 .19-.096.19-.208l.148-2.928-.147-2.892c0-.114-.084-.214-.19-.214m.972-.184c-.113 0-.204.107-.204.23l-.121 3.076.121 2.95c.001.12.091.224.204.224.114 0 .205-.104.205-.224l.136-2.95-.136-3.076c0-.123-.091-.23-.205-.23m1.01-.087c-.121 0-.22.116-.22.249l-.113 3.163.113 2.96c.001.13.1.24.221.24.12 0 .218-.11.218-.24l.127-2.96-.127-3.163c-.001-.133-.098-.249-.219-.249m1.06.006c-.128 0-.232.126-.232.268l-.104 3.157.104 2.929c.002.138.105.254.233.254.127 0 .23-.116.23-.254l.118-2.929-.118-3.157c-.001-.142-.103-.268-.231-.268m1.073-.09c-.137 0-.248.137-.248.287l-.098 3.247.098 2.909c.002.148.112.267.249.267.136 0 .247-.12.247-.267l.111-2.909-.111-3.247c0-.15-.11-.287-.248-.287m3.748.547a2.005 2.005 0 00-.862-.197c-.133 0-.264.015-.392.044-.127-1.473-1.365-2.635-2.868-2.635-.347 0-.692.066-1.014.184a.157.157 0 00-.103.15v5.663c.002.086.07.158.156.162h5.083a1.591 1.591 0 001.59-1.593c0-.882-.714-1.596-1.59-1.596"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">SoundCloud</div>
+                    <div class="link-handle">nya_solo</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+            <a href="https://www.youtube.com/@its_nya_music" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-youtube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">YouTube</div>
+                    <div class="link-handle">music videos</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Connect</div>
+        <div class="links">
+            <a href="https://www.instagram.com/its_nya_music/" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">Instagram</div>
+                    <div class="link-handle">@its_nya_music</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+            <a href="https://www.tiktok.com/@nyamusicofficial" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-tiktok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">TikTok</div>
+                    <div class="link-handle">@nyamusicofficial</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+            <a href="https://x.com/its_nya_music" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-x"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">X / Twitter</div>
+                    <div class="link-handle">@its_nya_music</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+            <a href="https://genius.com/artists/Nya-rapper" class="link" target="_blank" rel="noopener">
+                <div class="link-icon c-genius"><svg viewBox="0 0 24 24"><path d="M11.876.413C5.876.413.947 5.382.947 11.43c0 2.697.971 5.17 2.584 7.085L.947 23.587l5.04-2.584a10.745 10.745 0 005.889 1.748c5.999 0 10.929-4.969 10.929-11.018S17.875.413 11.876.413zm.136 16.636a1.592 1.592 0 01-1.123-.465 1.581 1.581 0 01-.47-1.125c0-.426.167-.83.47-1.13a1.592 1.592 0 011.123-.464c.426 0 .828.167 1.125.465.3.3.465.703.465 1.129s-.165.826-.465 1.125a1.581 1.581 0 01-1.125.465zm1.578-4.89c0 .002-.01.003-.012.005-.006.004-.005.012-.012.016l-.092.052c-.463.262-1.007.399-1.575.399a3.225 3.225 0 01-2.291-.948 3.221 3.221 0 01-.948-2.29c0-.866.337-1.68.948-2.292a3.225 3.225 0 012.291-.947c.864 0 1.678.336 2.29.947.612.612.948 1.426.948 2.291 0 1.09-.54 2.054-1.367 2.638l-.003.003-.092.063-.085.063z"/></svg></div>
+                <div class="link-text">
+                    <div class="link-name">Genius</div>
+                    <div class="link-handle">lyrics</div>
+                </div>
+                <div class="link-arrow">&rsaquo;</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">NYA &middot; Herten, DE</div>
+
+</div>
+</body>
+</html>
