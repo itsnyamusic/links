@@ -37,7 +37,7 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: #0e0e0e;
+            background: #0a0a0a;
             color: #ccc;
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
@@ -45,6 +45,46 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* big soft color wash behind the name area */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -15%;
+            width: 70vw;
+            height: 70vh;
+            background: radial-gradient(ellipse at center, rgba(255,45,123,0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* second glow — cool accent, bottom right */
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -25%;
+            right: -20%;
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(ellipse at center, rgba(0,242,234,0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* film grain overlay */
+        .grain {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.35;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
         }
 
         a { color: inherit; text-decoration: none; }
@@ -53,6 +93,8 @@
             width: 100%;
             max-width: 620px;
             padding: 3rem 2.5rem;
+            position: relative;
+            z-index: 2;
         }
 
         /* ---- the name ---- */
@@ -92,16 +134,17 @@
             align-items: center;
             justify-content: space-between;
             padding: 1rem 0;
-            border-top: 1px solid #1a1a1a;
-            transition: padding-left 0.15s;
+            border-top: 1px solid #191919;
+            transition: padding-left 0.15s, border-color 0.2s;
         }
 
         .link:last-child {
-            border-bottom: 1px solid #1a1a1a;
+            border-bottom: 1px solid #191919;
         }
 
         .link:hover {
             padding-left: 0.5rem;
+            border-color: #2a2a2a;
         }
 
         .link-left {
@@ -173,6 +216,7 @@
     </style>
 </head>
 <body>
+<div class="grain"></div>
 <div class="wrap">
 
     <div class="name">NYA</div>
